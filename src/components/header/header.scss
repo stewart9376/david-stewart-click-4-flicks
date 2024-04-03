@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  &__logo {
+    margin: 1.5rem;
+    font-size: 3rem;
+    color: $color-text-primary;
+    font-weight: 700;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__list {
+    list-style: none;
+  }
+}
