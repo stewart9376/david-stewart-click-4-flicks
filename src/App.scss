@@ -1,0 +1,6 @@
+@use "./styles/partials/resets";
+@use "./styles/partials/variables" as *;
+
+body {
+  background-color: $color-background-primary;
+}
