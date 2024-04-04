@@ -3,20 +3,27 @@
 
 .header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #3b6d9c;
 
   &__logo {
     margin: 1.5rem;
-    font-size: 3rem;
+    font-size: 2rem;
     color: $color-text-primary;
     font-weight: 700;
   }
 
   &__link {
+    color: $color-text-primary;
+    font-weight: 600;
     text-decoration: none;
+    display: flex;
+    gap: 3rem;
   }
 
   &__list {
     list-style: none;
+    padding: 0;
   }
 }

@@ -8,7 +8,9 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes></Routes>
+      <Routes>{/* <Route path="/recommendations" element={} /> */}</Routes>
+      <Routes>{/* <Route path="/movies" element={} /> */}</Routes>
+      <Routes>{/* <Route path="/showtimesCinemas" element={} /> */}</Routes>
     </BrowserRouter>
   );
 }
