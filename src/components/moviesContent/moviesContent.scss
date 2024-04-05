@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.movies {
+  &__subheader {
+    margin: 0;
+    padding: 1rem 9.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 7rem 0 9rem;
+  }
+
+  &__card {
+    margin: 1rem 1rem;
+  }
+}

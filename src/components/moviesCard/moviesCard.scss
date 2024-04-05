@@ -1,0 +1,16 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.card {
+  &__img {
+    width: 10rem;
+    height: 14rem;
+  }
+
+  &__content {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+  }
+}
