@@ -3,6 +3,7 @@ import React from "react";
 import "./App.scss";
 import Header from "../src/components/header/header.js";
 import MoviesPage from "./pages/moviesPage/moviesPage.js";
+import MovieOverviewPage from "./components/movieOverviewPage/movieOverviewPage.js";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         {/* <Route path="/" element={} */}
         <Route>{/* <Route path="/recommendations" element={} /> */}</Route>
         <Route path="/movies" element={<MoviesPage />} />
-        {/* <Route path="/movies/:id" element={} /> */}
+        <Route path="/movies/:id" element={<MovieOverviewPage />} />
         <Route>{/* <Route path="/showtimesCinemas" element={} /> */}</Route>
       </Routes>
     </BrowserRouter>
