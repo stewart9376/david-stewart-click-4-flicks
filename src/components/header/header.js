@@ -1,11 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./header.scss";
 
 export default function Header() {
   return (
     <header className="header">
-      {/* <div className="header__content"> */}
-      <p className="header__logo">Click 4 Flicks</p>
+      <Link className="header__link" to="/">
+        <p className="header__logo">Click 4 Flicks</p>
+      </Link>
       <nav className="header__navbar">
         <ul className="header__list">
           <NavLink to="/" className="header__link">
@@ -15,7 +16,6 @@ export default function Header() {
           </NavLink>
         </ul>
       </nav>
-      {/* </div> */}
     </header>
   );
 }
