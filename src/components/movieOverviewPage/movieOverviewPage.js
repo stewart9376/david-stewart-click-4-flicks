@@ -2,6 +2,9 @@ import "./movieOverviewPage.scss";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import netflixIcon from "../../assets/icons/netflix.png";
+import amazonIcon from "../../assets/icons/amazon-prime-video.png";
+import popcornIcon from "../../assets/icons/popcorn.png";
 
 export default function MovieOverviewPage() {
   const { id } = useParams();
@@ -27,19 +30,37 @@ export default function MovieOverviewPage() {
     return <p>Loading...</p>;
   }
 
+  const ratingPercentage = movie.vote_average * 10;
+
   return (
     <section className="overview-page">
       <div className="overview-page__wrapper">
-        <img
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-          className="overview-page__img"
-          alt="movie-poster"
-        />
+        <div className="overview-page__container">
+          <img
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            className="overview-page__img"
+            alt="movie-poster"
+          />
+          <div className="overview-page__icons">
+            <p className="overview-page__info">Available to watch on:</p>
+            <img className="overview-page__icon" src={netflixIcon} alt="" />
+            <img className="overview-page__icon" src={amazonIcon} alt="" />
+          </div>
+        </div>
         <div className="overview=page__content">
           <h1 className="overview-page__title">{movie.title}</h1>
-          <p className="overview-page__release-date">{movie.release_date}</p>
+          <p className="overview-page__release-date">
+            Release Date: {movie.release_date}
+          </p>
           <p className="overview-page__overview">{movie.overview}</p>
-          <p className="overview-page__rating">{movie.vote_average}</p>
+          <div className="overview-page__rating-container">
+            <img className="overview-page__popcorn" src={popcornIcon} alt="" />
+            <p className="overview-page__rating">{movie.vote_average}</p>
+          </div>
+          <div
+            className="overview-page__ratingBar"
+            style={{ width: `${ratingPercentage}%` }}
+          ></div>
         </div>
       </div>
     </section>

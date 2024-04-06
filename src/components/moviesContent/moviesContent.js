@@ -10,7 +10,7 @@ export default function MoviesContent({ movies }) {
         {movies &&
           movies.map((movie) => (
             <div className="movies__card" key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>
+              <Link className="movies__link" to={`/movies/${movie.id}`}>
                 <MoviesCard
                   key={movie.id}
                   poster={movie.poster_path}

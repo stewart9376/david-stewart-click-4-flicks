@@ -19,4 +19,9 @@
   &__card {
     margin: 1rem 1rem;
   }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text-primary;
+  }
 }
