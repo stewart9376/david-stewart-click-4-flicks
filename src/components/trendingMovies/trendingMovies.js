@@ -1,12 +1,24 @@
 import { Link } from "react-router-dom";
 import "./trendingMovies.scss";
 import TrendingMoviesCard from "../trendingMoviesCard/trendingMoviesCard";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function TrendingMovies({ trendingMovies }) {
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 800,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
+
   return (
     <section className="trending-movies">
       <h1 className="trending-movies__header">Trending Movies</h1>
-      <div className="trending-movies__wrapper">
+      <Slider {...settings} className="trending-movies__wrapper">
         {trendingMovies &&
           trendingMovies.map((trendingMovie) => (
             <div className="trending-movies__card" key={trendingMovie.id}>
@@ -21,7 +33,7 @@ export default function TrendingMovies({ trendingMovies }) {
               </Link>
             </div>
           ))}
-      </div>
+      </Slider>
     </section>
   );
 }
