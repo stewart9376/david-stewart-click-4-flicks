@@ -2,7 +2,6 @@ import "./moviesPage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieContent from "../../components/moviesContent/moviesContent";
-import { useParams } from "react-router-dom";
 import MovieOverviewPage from "../../components/movieOverviewPage/movieOverviewPage";
 // const API = process.env.API;
 // const API_KEY = process.env.API_KEY;

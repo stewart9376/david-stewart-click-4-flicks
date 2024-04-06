@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function MovieOverviewPage({ movies }) {
+export default function MovieOverviewPage() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
+        if (!id) return;
         const { data } = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}?language=en-US/&api_key=96cf67baca90e09252855c6a92226871`
         );
@@ -27,16 +28,20 @@ export default function MovieOverviewPage({ movies }) {
   }
 
   return (
-    <section className="overviewPage">
-      <h1 className="overviewPage__title">{movie.title}</h1>
-      <img
-        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-        className="overviewPage__img"
-        alt="movie-poster"
-      />
-      <p className="overviewPage__release-date">{movie.release_date}</p>
-      <p className="overviewPage__overview">{movie.overview}</p>
-      <p className="overviewPage__rating">{movie.vote_average}</p>
+    <section className="overview-page">
+      <div className="overview-page__wrapper">
+        <img
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          className="overview-page__img"
+          alt="movie-poster"
+        />
+        <div className="overview=page__content">
+          <h1 className="overview-page__title">{movie.title}</h1>
+          <p className="overview-page__release-date">{movie.release_date}</p>
+          <p className="overview-page__overview">{movie.overview}</p>
+          <p className="overview-page__rating">{movie.vote_average}</p>
+        </div>
+      </div>
     </section>
   );
 }
