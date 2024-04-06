@@ -1,2 +1,9 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.trending-card {
+  &__img {
+    width: 15rem;
+    border-radius: 10px;
+  }
+}

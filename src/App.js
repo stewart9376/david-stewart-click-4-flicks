@@ -3,13 +3,14 @@ import "./App.scss";
 import Header from "../src/components/header/header.js";
 import MoviesPage from "./pages/moviesPage/moviesPage.js";
 import MovieOverviewPage from "./components/movieOverviewPage/movieOverviewPage.js";
+import HomePage from "./pages/homePage/homePage.js";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* <Route path="/" element={} */}
+        <Route path="/" element={<HomePage />}></Route>
         <Route>{/* <Route path="/recommendations" element={} /> */}</Route>
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:id" element={<MovieOverviewPage />} />

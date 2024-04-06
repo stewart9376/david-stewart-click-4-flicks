@@ -1,2 +1,9 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.trending-movies {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+}

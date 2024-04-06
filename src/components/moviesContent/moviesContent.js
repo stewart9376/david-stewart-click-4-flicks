@@ -5,7 +5,7 @@ import "./moviesContent.scss";
 export default function MoviesContent({ movies }) {
   return (
     <section className="movies">
-      <h1 className="movies__subheader">Top Rated Movies</h1>
+      <h1 className="movies__header">Top Rated Movies</h1>
       <div className="movies__wrapper">
         {movies &&
           movies.map((movie) => (

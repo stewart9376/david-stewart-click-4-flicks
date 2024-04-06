@@ -16,7 +16,7 @@ export default function MoviesPage() {
       );
       return data.results;
     } catch (error) {
-      console.error("Error fetching movies", error);
+      console.error("Error fetching Movies", error);
       return [];
     }
   };
