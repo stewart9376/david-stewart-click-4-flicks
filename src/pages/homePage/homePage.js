@@ -21,8 +21,9 @@ export default function HomePage() {
   useEffect(() => {
     const getTrendingMovie = async () => {
       const firstPageMovies = await getTrendingMovies(1);
+      const secondPageMovies = await getTrendingMovies(2);
 
-      setTrendingMovies([...firstPageMovies]);
+      setTrendingMovies([...firstPageMovies, ...secondPageMovies]);
     };
     getTrendingMovie();
   }, []);

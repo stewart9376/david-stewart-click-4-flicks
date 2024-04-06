@@ -13,6 +13,7 @@ export default function TrendingMovies({ trendingMovies }) {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
+    pauseOnHover: true,
   };
 
   return (
