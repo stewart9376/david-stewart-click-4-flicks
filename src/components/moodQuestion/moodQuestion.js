@@ -10,8 +10,6 @@ export default function MoodQuestion() {
       <div className="mood__container">
         <p className="mood__answer">A. Happy</p>
         <p className="mood__answer">B. Sad</p>
-      </div>
-      <div className="mood__container">
         <p className="mood__answer">C. Stressed</p>
         <p className="mood__answer">D. Excited</p>
       </div>

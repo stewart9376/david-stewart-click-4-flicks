@@ -5,9 +5,9 @@ import "./recommendationsPage.scss";
 
 export default function RecommendationsPage() {
   return (
-    <section>
+    <section className="recommendations">
       <h1 className="recommendations__header">Recommendations</h1>
-      <div className="questionnaire">
+      <div className="recommendations__container">
         <MoodQuestion />
         <FrustationQuestion />
         <BusyWeekQuestion />
