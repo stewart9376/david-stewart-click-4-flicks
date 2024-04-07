@@ -2,9 +2,10 @@
 @use "../../styles/partials/variables" as *;
 
 .busy-week {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
+  padding: 0 10rem;
 
   &__subheader {
     font-size: 3rem;
