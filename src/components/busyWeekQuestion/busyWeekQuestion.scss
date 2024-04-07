@@ -1,9 +1,2 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-
-.recommendations {
-  &__header {
-    font-size: 3rem;
-    padding: 1rem 4rem;
-  }
-}

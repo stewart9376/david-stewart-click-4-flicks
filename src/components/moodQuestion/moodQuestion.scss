@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.mood {
+  &__subheader {
+    font-size: 3rem;
+    padding: 0 4rem;
+  }
+
+  &__question {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__answer {
+    border: 1px solid black;
+    padding: 2rem 7rem;
+  }
+}
