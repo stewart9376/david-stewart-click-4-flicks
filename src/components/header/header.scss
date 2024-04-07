@@ -20,14 +20,11 @@
     text-decoration: none;
     display: flex;
     gap: 3rem;
+    text-decoration: none;
   }
 
   &__list {
     list-style: none;
     padding: 0;
-  }
-
-  &__link {
-    text-decoration: none;
   }
 }

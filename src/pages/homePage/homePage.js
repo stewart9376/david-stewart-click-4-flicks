@@ -2,6 +2,7 @@ import "./homePage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import TrendingMovies from "../../components/trendingMovies/trendingMovies";
+import TrendingOverviewPage from "../../components/trendingOverviewPage/trendingOverviewPage";
 
 export default function HomePage() {
   const [trendingMovies, setTrendingMovies] = useState(null);
@@ -9,7 +10,7 @@ export default function HomePage() {
   const getTrendingMovies = async (pageNumber) => {
     try {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${pageNumber}&/&api_key=96cf67baca90e09252855c6a92226871`
+        `https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${pageNumber}&api_key=96cf67baca90e09252855c6a92226871`
       );
       return data.results;
     } catch (error) {
@@ -31,6 +32,7 @@ export default function HomePage() {
   return (
     <section>
       <TrendingMovies trendingMovies={trendingMovies} />
+      <TrendingOverviewPage trendingMovies={trendingMovies} />
     </section>
   );
 }
