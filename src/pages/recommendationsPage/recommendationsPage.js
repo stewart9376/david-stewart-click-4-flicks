@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import BusyWeekQuestion from "../../components/busyWeekQuestion/busyWeekQuestion";
-import FrustationQuestion from "../../components/frustationQuestion /frustationQuestion";
-import MoodQuestion from "../../components/moodQuestion/moodQuestion";
 import "./recommendationsPage.scss";
 import axios from "axios";
 
@@ -39,8 +36,23 @@ export default function RecommendationsPage() {
 
   const onBusyWeekChangeValue = (event) => {
     console.log(event.target.value);
-    setFrustrationAnswer(event.target.value);
+    setBusyWeekAnswer(event.target.value);
   };
+  if (!recommendations) {
+    return <p>Loading...</p>;
+  }
+  console.log(moodAnswer, busyWeekAnswer);
+  const recommendFilm = recommendations.filter((recommendation) => {
+    return (
+      recommendation.genre === moodAnswer &&
+      recommendation.minutes < busyWeekAnswer
+    );
+  });
+  console.log(recommendFilm);
+
+  const randomFilm =
+    recommendFilm[Math.floor(Math.random() * recommendFilm.length)];
+  console.log(randomFilm, "randomFilm");
 
   return (
     <section className="recommendations">
@@ -132,29 +144,46 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Animation/Comedy"
+                value={110}
                 name="minutes"
               />{" "}
               Yes, my week has been manic
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Sci-Fi/Action"
+                value={150}
                 name="minutes"
               />{" "}
               Somewhat, I have struggled for some downtime
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Superhero/Action"
+                value={200}
                 name="minutes"
               />{" "}
               No, I have had lots of downtime this week
             </div>
+            <div className="recommendations">
+              <h3 className="recommendations__subheader">Recommended Movies</h3>
+              <ul className="recommendations__movie-list">
+                <li className="recommendations__movie-title">
+                  {randomFilm && randomFilm.title}
+                </li>
+              </ul>
+            </div>
           </div>
         )}
-        {/* <FrustationQuestion />
-        <BusyWeekQuestion /> */}
+
+        {moodAnswer && frustrationAnswer && busyWeekAnswer && (
+          <div className="recommendations">
+            <h3 className="recommendations__subheader">Recommended Movies</h3>
+            <ul className="recommendations__movie-list">
+              <li className="recommendations__movie-title">
+                {randomFilm && randomFilm.title}
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
