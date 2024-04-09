@@ -2,6 +2,9 @@
 @use "../../styles/partials/variables" as *;
 
 .card {
+  background-color: white;
+  border-radius: 10px;
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -9,16 +12,18 @@
   }
 
   &__img {
-    width: 10rem;
-    height: 14rem;
+    width: 14rem;
+    height: 20rem;
+    border-radius: 5px;
   }
 
   &__content {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 0;
     padding: 1rem 0;
     padding: 2rem 0;
     width: 10rem;
     text-align: center;
+    height: 6rem;
   }
 }

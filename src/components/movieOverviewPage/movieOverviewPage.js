@@ -15,7 +15,7 @@ export default function MovieOverviewPage() {
       try {
         if (!id) return;
         const { data } = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}?language=en-US/&api_key=96cf67baca90e09252855c6a92226871`
+          `https://api.themoviedb.org/3/movie/${id}?language=en-US/&api_key=${process.env.REACT_APP_API_KEY}`
         );
         setMovie(data);
       } catch (error) {

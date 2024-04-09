@@ -12,7 +12,7 @@ export default function MoviesPage() {
   const fetchMovies = async (pageNumber) => {
     try {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${pageNumber}&api_key=96cf67baca90e09252855c6a92226871`
+        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${pageNumber}&api_key=${process.env.REACT_APP_API_KEY}`
       );
       return data.results;
     } catch (error) {

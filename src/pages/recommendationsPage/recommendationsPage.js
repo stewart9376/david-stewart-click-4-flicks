@@ -25,34 +25,42 @@ export default function RecommendationsPage() {
   }, []);
 
   const onMoodChangeValue = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setMoodAnswer(event.target.value);
   };
 
   const onFrustrationChangeValue = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setFrustrationAnswer(event.target.value);
   };
 
   const onBusyWeekChangeValue = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setBusyWeekAnswer(event.target.value);
   };
   if (!recommendations) {
     return <p>Loading...</p>;
   }
-  console.log(moodAnswer, busyWeekAnswer);
+  // console.log(moodAnswer, busyWeekAnswer);
   const recommendFilm = recommendations.filter((recommendation) => {
     return (
       recommendation.genre === moodAnswer &&
       recommendation.minutes < busyWeekAnswer
     );
   });
-  console.log(recommendFilm);
+  // console.log(recommendFilm);
 
   const randomFilm =
     recommendFilm[Math.floor(Math.random() * recommendFilm.length)];
   console.log(randomFilm, "randomFilm");
+
+  // const randomFilms = [];
+  // while (randomFilms.lengths < 3) {
+  //   const randomSelector = Math.floor(Math.random() * recommendFilm.length);
+  //   const randomFilm = recommendFilm[randomSelector];
+  //   if (!randomFilms.includes(randomFilm)) {
+  //     randomFilms.push(randomFilm);
+  //   }
 
   return (
     <section className="recommendations">
@@ -163,23 +171,21 @@ export default function RecommendationsPage() {
               />{" "}
               No, I have had lots of downtime this week
             </div>
-            <div className="recommendations">
-              <h3 className="recommendations__subheader">Recommended Movies</h3>
-              <ul className="recommendations__movie-list">
-                <li className="recommendations__movie-title">
-                  {randomFilm && randomFilm.title}
-                </li>
-              </ul>
-            </div>
           </div>
         )}
-
         {moodAnswer && frustrationAnswer && busyWeekAnswer && (
           <div className="recommendations">
             <h3 className="recommendations__subheader">Recommended Movies</h3>
             <ul className="recommendations__movie-list">
               <li className="recommendations__movie-title">
                 {randomFilm && randomFilm.title}
+                {recommendFilm.map((recommendFilm) => (
+                  <div className="recommendations__card">
+                    key={recommendFilm.id}
+                    poster={recommendFilm.poster_path}
+                    title={recommendFilm.title}
+                  </div>
+                ))}
               </li>
             </ul>
           </div>
