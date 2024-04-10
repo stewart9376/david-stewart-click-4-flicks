@@ -27,7 +27,7 @@ export default function TrendingOverviewPage() {
   }, [id]);
 
   if (!eachTrendingmovie) {
-    return <p>Loading...</p>;
+    return;
   }
 
   const ratingPercentage = eachTrendingmovie.vote_average * 10;

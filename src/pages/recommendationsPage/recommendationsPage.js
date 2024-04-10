@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./recommendationsPage.scss";
 import axios from "axios";
+import RecommendationCard from "../../components/recommendationCard/recommendationCard";
 
 export default function RecommendationsPage() {
   const [recommendations, setRecommendations] = useState(null);
@@ -25,42 +26,30 @@ export default function RecommendationsPage() {
   }, []);
 
   const onMoodChangeValue = (event) => {
-    // console.log(event.target.value);
     setMoodAnswer(event.target.value);
   };
 
   const onFrustrationChangeValue = (event) => {
-    // console.log(event.target.value);
     setFrustrationAnswer(event.target.value);
   };
 
   const onBusyWeekChangeValue = (event) => {
-    // console.log(event.target.value);
     setBusyWeekAnswer(event.target.value);
   };
   if (!recommendations) {
     return <p>Loading...</p>;
   }
-  // console.log(moodAnswer, busyWeekAnswer);
   const recommendFilm = recommendations.filter((recommendation) => {
     return (
       recommendation.genre === moodAnswer &&
-      recommendation.minutes < busyWeekAnswer
+      recommendation.happy_ending === frustrationAnswer &&
+      recommendation.minutes <= busyWeekAnswer
     );
   });
-  // console.log(recommendFilm);
+  console.log(recommendFilm);
 
   const randomFilm =
     recommendFilm[Math.floor(Math.random() * recommendFilm.length)];
-  console.log(randomFilm, "randomFilm");
-
-  // const randomFilms = [];
-  // while (randomFilms.lengths < 3) {
-  //   const randomSelector = Math.floor(Math.random() * recommendFilm.length);
-  //   const randomFilm = recommendFilm[randomSelector];
-  //   if (!randomFilms.includes(randomFilm)) {
-  //     randomFilms.push(randomFilm);
-  //   }
 
   return (
     <section className="recommendations">
@@ -79,7 +68,7 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Superhero/Action"
+                value="Animation/Adventure"
                 name="Genre"
               />{" "}
               Happy
@@ -120,24 +109,17 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Animation/Comedy"
+                value="true"
                 name="Genre"
               />{" "}
-              Yes, Multiple times
+              Yes
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Sci-Fi/Action"
+                value="false"
                 name="Genre"
               />{" "}
-              Yes, once or twice
-              <input
-                className="recommendations__answer"
-                type="radio"
-                value="Superhero/Action"
-                name="Genre"
-              />{" "}
-              No, not at all
+              No
             </div>
           </div>
         )}
@@ -152,21 +134,21 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value={110}
+                value={"<= 100"}
                 name="minutes"
               />{" "}
               Yes, my week has been manic
               <input
                 className="recommendations__answer"
                 type="radio"
-                value={150}
+                value={">100 && <150"}
                 name="minutes"
               />{" "}
               Somewhat, I have struggled for some downtime
               <input
                 className="recommendations__answer"
                 type="radio"
-                value={200}
+                value={">=150"}
                 name="minutes"
               />{" "}
               No, I have had lots of downtime this week
@@ -176,18 +158,17 @@ export default function RecommendationsPage() {
         {moodAnswer && frustrationAnswer && busyWeekAnswer && (
           <div className="recommendations">
             <h3 className="recommendations__subheader">Recommended Movies</h3>
-            <ul className="recommendations__movie-list">
-              <li className="recommendations__movie-title">
-                {randomFilm && randomFilm.title}
-                {recommendFilm.map((recommendFilm) => (
-                  <div className="recommendations__card">
-                    key={recommendFilm.id}
-                    poster={recommendFilm.poster_path}
-                    title={recommendFilm.title}
-                  </div>
-                ))}
-              </li>
-            </ul>
+            <div className="recommendations__movie-list">
+              {recommendFilm.map((recommendation) => (
+                <div className="recommendations__card" key={recommendation.id}>
+                  <RecommendationCard
+                    key={recommendation.id}
+                    poster={recommendation.poster_path}
+                    title={recommendation.title}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
