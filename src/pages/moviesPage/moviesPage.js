@@ -3,11 +3,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieContent from "../../components/moviesContent/moviesContent";
 import MovieOverviewPage from "../../components/movieOverviewPage/movieOverviewPage";
-// const API = process.env.API;
-// const API_KEY = process.env.API_KEY;
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const fetchMovies = async (pageNumber) => {
     try {
@@ -32,10 +31,21 @@ export default function MoviesPage() {
     fetchMoviesData();
   }, []);
 
+  const handleLoadMore = async () => {
+    const nextPageMovies = await fetchMovies(currentPage + 1);
+    setMovies((prevMovies) => [...prevMovies, ...nextPageMovies.slice(0, 20)]);
+    setCurrentPage(currentPage + 1);
+  };
+
   return (
     <section>
       <MovieContent movies={movies} />
-      <MovieOverviewPage movies={movies} />
+      <div className="load">
+        <button className="load__button" onClick={handleLoadMore}>
+          Load More
+        </button>
+      </div>
+      <MovieOverviewPage />
     </section>
   );
 }
