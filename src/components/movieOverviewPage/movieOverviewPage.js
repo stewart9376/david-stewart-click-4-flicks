@@ -1,5 +1,5 @@
 import "./movieOverviewPage.scss";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import netflixIcon from "../../assets/icons/netflix.png";
@@ -41,10 +41,30 @@ export default function MovieOverviewPage() {
             className="overview-page__img"
             alt="movie-poster"
           />
+          <p className="overview-page__info">Available to watch on:</p>
           <div className="overview-page__icons">
-            <p className="overview-page__info">Available to watch on:</p>
-            <img className="overview-page__icon" src={netflixIcon} alt="" />
-            <img className="overview-page__icon" src={amazonIcon} alt="" />
+            <Link
+              className="header__link"
+              to="https://www.netflix.com/"
+              target="_blank"
+            >
+              <img
+                className="overview-page__icon"
+                src={netflixIcon}
+                alt="netflix link"
+              />
+            </Link>
+            <Link
+              className="header__link"
+              to="https://www.amazon.co.uk/gp/video/primesignup/"
+              target="_blank"
+            >
+              <img
+                className="overview-page__icon"
+                src={amazonIcon}
+                alt="amazon link"
+              />
+            </Link>
           </div>
         </div>
         <div className="overview=page__content">

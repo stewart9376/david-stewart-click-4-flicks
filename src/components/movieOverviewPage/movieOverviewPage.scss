@@ -29,6 +29,7 @@
   &__img {
     width: 20rem;
     height: 25rem;
+    border-radius: 10px;
   }
 
   &__release-date {
@@ -39,10 +40,16 @@
     font-size: 1.3rem;
   }
 
+  &__icons {
+    display: flex;
+    flex-direction: row;
+  }
+
   &__icon {
     width: 3rem;
     height: 3rem;
     margin: 0 1rem 0 0;
+    border-radius: 10px;
   }
 
   &__info {

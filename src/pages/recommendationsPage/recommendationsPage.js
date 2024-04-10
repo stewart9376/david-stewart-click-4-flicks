@@ -39,6 +39,7 @@ export default function RecommendationsPage() {
   if (!recommendations) {
     return <p>Loading...</p>;
   }
+
   const recommendFilm = recommendations.filter((recommendation) => {
     return (
       recommendation.genre === moodAnswer &&
@@ -46,7 +47,6 @@ export default function RecommendationsPage() {
       recommendation.minutes <= busyWeekAnswer
     );
   });
-  console.log(recommendFilm);
 
   const randomFilm =
     recommendFilm[Math.floor(Math.random() * recommendFilm.length)];
@@ -68,28 +68,28 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Animation/Adventure"
+                value="Action"
                 name="Genre"
               />{" "}
               Happy
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Animation/Comedy"
+                value="Animation"
                 name="Genre"
               />{" "}
               Sad
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Sci-Fi/Action"
+                value="Drama"
                 name="Genre"
               />{" "}
               Stressed
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Romance/Drama"
+                value="Thriller"
                 name="Genre"
               />{" "}
               Excited
@@ -134,14 +134,14 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value={"<= 100"}
+                value={"<= 120"}
                 name="minutes"
               />{" "}
               Yes, my week has been manic
               <input
                 className="recommendations__answer"
                 type="radio"
-                value={">100 && <150"}
+                value={">120 && <150"}
                 name="minutes"
               />{" "}
               Somewhat, I have struggled for some downtime
