@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import TrendingMovies from "../../components/trendingMovies/trendingMovies";
 import TrendingOverviewPage from "../../components/trendingOverviewPage/trendingOverviewPage";
-import PopcornLoader from "../../components/popcornLoader/popcornLoader";
 
 export default function HomePage() {
   const [trendingMovies, setTrendingMovies] = useState(null);

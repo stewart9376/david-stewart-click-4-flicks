@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import "./recommendationsPage.scss";
 import axios from "axios";
-import RecommendationCard from "../../components/recommendationCard/recommendationCard";
 import PopcornLoader from "../../components/popcornLoader/popcornLoader";
-import { useNavigate } from "react-router-dom";
+import AnswerPage from "../answerPage/answerPage";
 
 export default function RecommendationsPage() {
   const [recommendations, setRecommendations] = useState(null);
   const [moodAnswer, setMoodAnswer] = useState("");
   const [frustrationAnswer, setFrustrationAnswer] = useState("");
   const [busyWeekAnswer, setBusyWeekAnswer] = useState("");
-  const nav = useNavigate();
+  const [showLoading, setShowLoading] = useState(false);
 
   const fetchRecommendations = async () => {
     try {
@@ -38,11 +37,15 @@ export default function RecommendationsPage() {
 
   const onBusyWeekChangeValue = (event) => {
     setBusyWeekAnswer(event.target.value);
-    nav("/loading");
+    setShowLoading(true);
     setTimeout(() => {
-      nav("/answers");
-    }, 2000);
+      setShowLoading(false);
+    }, 3000);
   };
+
+  if (showLoading) {
+    return <PopcornLoader />;
+  }
 
   if (!recommendations) {
     return <p>Loading...</p>;
@@ -56,8 +59,9 @@ export default function RecommendationsPage() {
     );
   });
 
-  const randomFilm =
-    recommendFilm[Math.floor(Math.random() * recommendFilm.length)];
+  recommendFilm.sort(() => Math.random() - 0.5);
+
+  const randomFilms = recommendFilm.slice(0, 2);
 
   return (
     <section className="recommendations">
@@ -118,14 +122,14 @@ export default function RecommendationsPage() {
                 className="recommendations__answer"
                 type="radio"
                 value="true"
-                name="Genre"
+                name="happy_ending"
               />{" "}
               Yes
               <input
                 className="recommendations__answer"
                 type="radio"
                 value="false"
-                name="Genre"
+                name="happy_ending"
               />{" "}
               No
             </div>
@@ -160,23 +164,10 @@ export default function RecommendationsPage() {
             </div>
           </div>
         )}
-        {moodAnswer && frustrationAnswer && busyWeekAnswer && (
-          <div className="recommendations">
-            <h3 className="recommendations__subheader">Recommended Movies</h3>
-            <div className="recommendations__wrapper">
-              {recommendFilm.map((recommendation) => (
-                <div className="recommendations__card" key={recommendation.id}>
-                  <RecommendationCard
-                    key={recommendation.id}
-                    poster={recommendation.poster_path}
-                    title={recommendation.title}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+      {moodAnswer && frustrationAnswer && busyWeekAnswer && !showLoading && (
+        <AnswerPage recommendedMovies={randomFilms} />
+      )}
     </section>
   );
 }

@@ -10,9 +10,10 @@
 
   &__wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 7rem 0 9rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__subheader {

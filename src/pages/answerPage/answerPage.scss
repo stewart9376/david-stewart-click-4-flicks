@@ -1,0 +1,20 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.answer-page {
+  &__wrapper {
+    display: flex;
+    padding: 0 7rem 0 9rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__subheader {
+    font-size: 3rem;
+    padding: 0 4rem;
+    color: $color-recommendations-primary;
+    display: flex;
+    justify-content: center;
+  }
+}
