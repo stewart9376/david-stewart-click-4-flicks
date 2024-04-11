@@ -7,7 +7,12 @@
   justify-content: center;
 
   &__button {
-    padding: 1rem;
-    width: 80%;
+    padding: 2rem;
+    font-size: 2rem;
+    color: white;
+    width: 40%;
+    background: linear-gradient(to right, #55b7ff, #8ed2ff);
+    border-radius: 7px;
+    border: none;
   }
 }

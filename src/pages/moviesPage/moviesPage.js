@@ -22,18 +22,21 @@ export default function MoviesPage() {
 
   useEffect(() => {
     const fetchMoviesData = async () => {
+      // const firstPageMovies = await fetchMovies(1);
+      // const secondPageMovies = await fetchMovies(2);
+      // const thirdPageMovies = await fetchMovies(3);
       const firstPageMovies = await fetchMovies(1);
-      const secondPageMovies = await fetchMovies(2);
-      const thirdPageMovies = await fetchMovies(3);
-
-      setMovies([...firstPageMovies, ...secondPageMovies, ...thirdPageMovies]);
+      setMovies(firstPageMovies.slice(0, 16));
     };
+
+    // setMovies([...firstPageMovies, ...secondPageMovies, ...thirdPageMovies]);
+
     fetchMoviesData();
   }, []);
 
   const handleLoadMore = async () => {
     const nextPageMovies = await fetchMovies(currentPage + 1);
-    setMovies((prevMovies) => [...prevMovies, ...nextPageMovies.slice(0, 20)]);
+    setMovies((prevMovies) => [...prevMovies, ...nextPageMovies.slice(0, 16)]);
     setCurrentPage(currentPage + 1);
   };
 
