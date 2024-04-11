@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import "./recommendationsPage.scss";
 import axios from "axios";
 import RecommendationCard from "../../components/recommendationCard/recommendationCard";
+import PopcornLoader from "../../components/popcornLoader/popcornLoader";
+import { useNavigate } from "react-router-dom";
 
 export default function RecommendationsPage() {
   const [recommendations, setRecommendations] = useState(null);
   const [moodAnswer, setMoodAnswer] = useState("");
   const [frustrationAnswer, setFrustrationAnswer] = useState("");
   const [busyWeekAnswer, setBusyWeekAnswer] = useState("");
+  const nav = useNavigate();
 
   const fetchRecommendations = async () => {
     try {
@@ -35,7 +38,12 @@ export default function RecommendationsPage() {
 
   const onBusyWeekChangeValue = (event) => {
     setBusyWeekAnswer(event.target.value);
+    nav("/loading");
+    setTimeout(() => {
+      nav("/answers");
+    }, 2000);
   };
+
   if (!recommendations) {
     return <p>Loading...</p>;
   }
@@ -130,7 +138,11 @@ export default function RecommendationsPage() {
               Have you been busy this week? Both in your career and your day to
               day life? ?
             </h4>
-            <div onChange={onBusyWeekChangeValue}>
+
+            <div
+              className="recommendations__answer-container"
+              onChange={onBusyWeekChangeValue}
+            >
               <input
                 className="recommendations__answer"
                 type="radio"
@@ -141,14 +153,7 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value={">120 && <150"}
-                name="minutes"
-              />{" "}
-              Somewhat, I have struggled for some downtime
-              <input
-                className="recommendations__answer"
-                type="radio"
-                value={">=150"}
+                value={">120"}
                 name="minutes"
               />{" "}
               No, I have had lots of downtime this week
@@ -158,7 +163,7 @@ export default function RecommendationsPage() {
         {moodAnswer && frustrationAnswer && busyWeekAnswer && (
           <div className="recommendations">
             <h3 className="recommendations__subheader">Recommended Movies</h3>
-            <div className="recommendations__movie-list">
+            <div className="recommendations__wrapper">
               {recommendFilm.map((recommendation) => (
                 <div className="recommendations__card" key={recommendation.id}>
                   <RecommendationCard

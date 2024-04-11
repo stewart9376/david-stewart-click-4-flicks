@@ -7,7 +7,7 @@ export default function MoviesCard({ poster, title }) {
         <img
           src={`https://image.tmdb.org/t/p/original${poster}`}
           className="card__img"
-          alt=""
+          alt="movie poster"
         />
         <h5 className="card__content">{title}</h5>
       </div>

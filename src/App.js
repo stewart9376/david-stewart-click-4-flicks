@@ -6,6 +6,8 @@ import MovieOverviewPage from "./components/movieOverviewPage/movieOverviewPage.
 import HomePage from "./pages/homePage/homePage.js";
 import TrendingOverviewPage from "./components/trendingOverviewPage/trendingOverviewPage.js";
 import RecommendationsPage from "./pages/recommendationsPage/recommendationsPage.js";
+import PopcornLoader from "./components/popcornLoader/popcornLoader.js";
+import RecommendationCard from "./components/recommendationCard/recommendationCard.js";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route>
           <Route path="/recommendations" element={<RecommendationsPage />} />
         </Route>
+        <Route path="/loading" element={<PopcornLoader />} />
+        <Route path="/answers" element={<RecommendationCard />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:id" element={<MovieOverviewPage />} />
         <Route>{/* <Route path="/showtimesCinemas" element={} /> */}</Route>
