@@ -8,10 +8,9 @@ import TrendingOverviewPage from "./components/trendingOverviewPage/trendingOver
 import RecommendationsPage from "./pages/recommendationsPage/recommendationsPage.js";
 import PopcornLoader from "./components/popcornLoader/popcornLoader.js";
 import AnswerPage from "./pages/answerPage/answerPage.js";
+import ShowtimesPage from "./pages/showtimesPage/showtimesPage.js";
 
 function App() {
-  // const [recommendedMovies, setReommendedMovies] = useState([]);
-
   return (
     <BrowserRouter>
       <Header />
@@ -25,7 +24,9 @@ function App() {
         <Route path="/answers" element={<AnswerPage />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:id" element={<MovieOverviewPage />} />
-        <Route>{/* <Route path="/showtimesCinemas" element={} /> */}</Route>
+        <Route>
+          <Route path="/showtimes" element={<ShowtimesPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

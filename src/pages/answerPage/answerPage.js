@@ -2,7 +2,6 @@ import RecommendationCard from "../../components/recommendationCard/recommendati
 import "./answerPage.scss";
 
 export default function AnswerPage({ recommendedMovies }) {
-  console.log(recommendedMovies);
   return (
     <div className="answer-page">
       <h3 className="answer-page__subheader">Take your pick</h3>

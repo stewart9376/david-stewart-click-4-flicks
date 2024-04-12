@@ -1,0 +1,11 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.showtimes {
+  &__header {
+    font-size: 3rem;
+    margin: 0;
+    padding: 2rem 6.5rem;
+    color: #8ed2ff;
+  }
+}
