@@ -4,8 +4,9 @@
 .recommendations {
   &__header {
     font-size: 3rem;
-    padding: 1rem 6rem;
-    color: $color-recommendations-primary;
+    margin: 0;
+    padding: 2rem 6.5rem;
+    color: #8ed2ff;
   }
 
   &__wrapper {
@@ -19,16 +20,16 @@
   &__subheader {
     font-size: 3rem;
     padding: 0 4rem;
-    color: $color-recommendations-primary;
+    color: #8ed2ff;
   }
 
   &__question {
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    background: #d2e8f6;
-    color: $color-recommendations-primary;
-    border-radius: 10px;
+    background: #6430bd;
+    color: #d7d3e8;
+    border-radius: 3rem;
     padding: 2rem;
     width: 55rem;
   }
@@ -43,7 +44,7 @@
     flex-direction: row;
     gap: 2rem;
     font-size: 2rem;
-    color: #3e95b7;
+    color: #d7d3e8;
     justify-content: center;
   }
 }

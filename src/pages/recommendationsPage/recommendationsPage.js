@@ -61,7 +61,7 @@ export default function RecommendationsPage() {
 
   recommendFilm.sort(() => Math.random() - 0.5);
 
-  const randomFilms = recommendFilm.slice(0, 2);
+  const randomFilms = recommendFilm.slice(0, 3);
 
   return (
     <section className="recommendations">
@@ -110,57 +110,61 @@ export default function RecommendationsPage() {
         )}
         {moodAnswer && !frustrationAnswer && (
           <div className="recommendations">
-            <h3 className="recommendations__subheader">Question 2</h3>
-            <h4 className="recommendations__question">
-              Did you experience moments of frustration or anxiety today ?
-            </h4>
-            <div
-              className="recommendations__answer-container"
-              onChange={onFrustrationChangeValue}
-            >
-              <input
-                className="recommendations__answer"
-                type="radio"
-                value="true"
-                name="happy_ending"
-              />{" "}
-              Yes
-              <input
-                className="recommendations__answer"
-                type="radio"
-                value="false"
-                name="happy_ending"
-              />{" "}
-              No
+            <div className="recommendations__wrapper">
+              <h3 className="recommendations__subheader">Question 2</h3>
+              <h4 className="recommendations__question">
+                Did you experience moments of frustration or anxiety today ?
+              </h4>
+              <div
+                className="recommendations__answer-container"
+                onChange={onFrustrationChangeValue}
+              >
+                <input
+                  className="recommendations__answer"
+                  type="radio"
+                  value="true"
+                  name="happy_ending"
+                />{" "}
+                Yes
+                <input
+                  className="recommendations__answer"
+                  type="radio"
+                  value="false"
+                  name="happy_ending"
+                />{" "}
+                No
+              </div>
             </div>
           </div>
         )}
         {moodAnswer && frustrationAnswer && !busyWeekAnswer && (
           <div className="recommendations">
-            <h3 className="recommendations__subheader">Question 3</h3>
-            <h4 className="recommendations__question">
-              Have you been busy this week? Both in your career and your day to
-              day life? ?
-            </h4>
+            <div className="recommendations__wrapper">
+              <h3 className="recommendations__subheader">Question 3</h3>
+              <h4 className="recommendations__question">
+                Have you been busy this week? Both in your career and your day
+                to day life? ?
+              </h4>
 
-            <div
-              className="recommendations__answer-container"
-              onChange={onBusyWeekChangeValue}
-            >
-              <input
-                className="recommendations__answer"
-                type="radio"
-                value={"<= 120"}
-                name="minutes"
-              />{" "}
-              Yes, my week has been manic
-              <input
-                className="recommendations__answer"
-                type="radio"
-                value={">120"}
-                name="minutes"
-              />{" "}
-              No, I have had lots of downtime this week
+              <div
+                className="recommendations__answer-container"
+                onChange={onBusyWeekChangeValue}
+              >
+                <input
+                  className="recommendations__answer"
+                  type="radio"
+                  value={"<= 120"}
+                  name="minutes"
+                />{" "}
+                Yes, my week has been manic
+                <input
+                  className="recommendations__answer"
+                  type="radio"
+                  value={">120"}
+                  name="minutes"
+                />{" "}
+                No, I have had lots of downtime this week
+              </div>
             </div>
           </div>
         )}

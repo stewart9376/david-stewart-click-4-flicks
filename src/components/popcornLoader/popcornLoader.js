@@ -6,7 +6,7 @@ const PopcornLoader = () => (
   <div className="popcorn-loader">
     <Lottie animationData={popcorn} loop={true} style={{ width: 20 + "rem" }} />
     <p className="popcorn-loader__text">
-      Get some popcorn, here comes your recommended movie...
+      Get some popcorn, here comes your recommended movies...
     </p>
   </div>
 );

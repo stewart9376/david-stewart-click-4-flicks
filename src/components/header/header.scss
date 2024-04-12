@@ -2,20 +2,29 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #3b6d9c;
+  background-color: $color-background-primary;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 4rem;
+    margin: 1.2rem;
+    background-color: #6430bd;
+    padding: 0 3.5rem;
+  }
 
   &__logo {
     margin: 1.5rem;
     font-size: 2rem;
     color: $color-text-primary;
     font-weight: 700;
+    color: #d7d3e8;
   }
 
   &__link {
-    color: $color-text-primary;
+    color: #d7d3e8;
     font-weight: 600;
     text-decoration: none;
     display: flex;

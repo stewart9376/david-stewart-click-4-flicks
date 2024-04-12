@@ -4,7 +4,7 @@
 .answer-page {
   &__wrapper {
     display: flex;
-    padding: 0 7rem 0 9rem;
+    padding: 5rem 7rem 10rem 7rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -12,9 +12,10 @@
 
   &__subheader {
     font-size: 3rem;
-    padding: 0 4rem;
-    color: $color-recommendations-primary;
+    padding: 0 5rem;
+    color: #8ed2ff;
     display: flex;
     justify-content: center;
+    margin-top: 0;
   }
 }
