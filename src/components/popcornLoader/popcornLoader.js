@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import popcorn from "../../assets/animations/Animation - popcorn-1.json";
+import popcorn from "../../assets/animations/Animation - popcorn.json";
 import "./popcornLoader.scss";
 
 const PopcornLoader = () => (
