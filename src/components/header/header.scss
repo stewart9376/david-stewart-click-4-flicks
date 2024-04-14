@@ -11,25 +11,32 @@
     justify-content: space-between;
     border-radius: 4rem;
     margin: 1.2rem;
-    background-color: #6430bd;
+    background-color: $color-background-secondary;
     padding: 0 3.5rem;
   }
 
   &__logo {
     margin: 1.5rem;
     font-size: 2rem;
-    color: $color-text-primary;
+    color: $color-text-secondary;
     font-weight: 700;
-    color: #d7d3e8;
+    text-decoration: none;
   }
 
-  &__link {
-    color: #d7d3e8;
+  &__hyperlink {
+    color: $color-text-secondary;
     font-weight: 600;
-    text-decoration: none;
     display: flex;
     gap: 3rem;
     text-decoration: none;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    &:hover {
+      background-color: $color-background-primary;
+      text-decoration: underline;
+      border-radius: 2rem;
+    }
   }
 
   &__list {

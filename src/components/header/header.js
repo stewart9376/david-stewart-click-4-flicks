@@ -10,13 +10,13 @@ export default function Header() {
         </Link>
         <nav className="header__navbar">
           <ul className="header__list">
-            <NavLink to="/recommendations" className="header__link">
+            <NavLink to="/recommendations" className="header__hyperlink">
               <li>Recommendations</li>
             </NavLink>
-            <NavLink to="/movies" className="header__link">
+            <NavLink to="/movies" className="header__hyperlink">
               <li>Movies</li>
             </NavLink>
-            <NavLink to="/showtimes" className="header__link">
+            <NavLink to="/showtimes" className="header__hyperlink">
               <li>Cinema Showtimes</li>
             </NavLink>
           </ul>

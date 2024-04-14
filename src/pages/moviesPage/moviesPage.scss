@@ -9,9 +9,13 @@
   &__button {
     padding: 2rem;
     font-size: 2rem;
-    color: white;
+    color: #ffffff;
     width: 40%;
-    background: linear-gradient(to right, #6430bd, #8ed2ff);
+    background: linear-gradient(
+      to right,
+      $color-background-secondary,
+      $color-text-primary
+    );
     border-radius: 2rem;
     border: none;
   }

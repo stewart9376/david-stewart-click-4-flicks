@@ -24,7 +24,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__img {
@@ -35,12 +35,12 @@
 
   &__release-date {
     font-size: 1.5rem;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__overview {
     font-size: 1.3rem;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__icons {
@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__popcorn {

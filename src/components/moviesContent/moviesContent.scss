@@ -3,7 +3,7 @@
 
 .movies {
   &__header {
-    color: #8ed2ff;
+    color: $color-text-primary;
     margin: 0;
     padding: 2rem 6.5rem;
     font-size: 3rem;
@@ -23,6 +23,5 @@
 
   &__link {
     text-decoration: none;
-    color: $color-text-primary;
   }
 }

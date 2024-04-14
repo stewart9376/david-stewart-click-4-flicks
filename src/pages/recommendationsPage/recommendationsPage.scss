@@ -6,7 +6,7 @@
     font-size: 3rem;
     margin: 0;
     padding: 2rem 6.5rem;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__wrapper {
@@ -20,15 +20,15 @@
   &__subheader {
     font-size: 3rem;
     padding: 0 4rem;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__question {
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    background: #6430bd;
-    color: #d7d3e8;
+    background: $color-background-secondary;
+    color: $color-text-secondary;
     border-radius: 3rem;
     padding: 2rem;
     width: 55rem;
@@ -44,7 +44,7 @@
     flex-direction: row;
     gap: 2rem;
     font-size: 2rem;
-    color: #d7d3e8;
+    color: $color-text-secondary;
     justify-content: center;
   }
 }
