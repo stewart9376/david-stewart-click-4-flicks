@@ -3,6 +3,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import TrendingMovies from "../../components/trendingMovies/trendingMovies";
 import TrendingOverviewPage from "../../components/trendingOverviewPage/trendingOverviewPage";
+import recommendation from "../../assets/icons/8726315_question_circle_icon.png";
+import movie from "../../assets/icons/2191561_movie_play_show_sound_video_icon.png";
+import filmReel from "../../assets/icons/46994_film_reel_icon.png";
 
 export default function HomePage() {
   const [trendingMovies, setTrendingMovies] = useState(null);
@@ -32,6 +35,32 @@ export default function HomePage() {
   return (
     <section>
       <h1 className="features">Features</h1>
+      <div className="features__container">
+        <div className="features__card">
+          <img className="features__icon" src={recommendation}></img>
+          <h3 className="features__subheader">Recommendations</h3>
+          <p className="features__content">
+            Questionnaire with three questions to filter down and randomly pick
+            three movies
+          </p>
+        </div>
+        <div className="features__card">
+          <img className="features__icon" src={movie}></img>
+          <h3 className="features__subheader">Movies</h3>
+          <p className="features__content">
+            A list of the top rated movies, along with an overview page
+            describing the movie
+          </p>
+        </div>
+        <div className="features__card">
+          <img className="features__icon" src={filmReel}></img>
+          <h3 className="features__subheader">Cinema Showtimes</h3>
+          <p className="features__content">
+            A dropdown of cities in the UK showing the latest films out now and
+            the showtimes
+          </p>
+        </div>
+      </div>
       <TrendingMovies trendingMovies={trendingMovies} />
       <TrendingOverviewPage trendingMovies={trendingMovies} />
     </section>

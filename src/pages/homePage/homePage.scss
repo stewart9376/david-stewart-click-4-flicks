@@ -1,2 +1,40 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.features {
+  font-size: 3rem;
+  color: #8ed2ff;
+  padding: 2rem 6.5rem 4rem;
+  margin: 0;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  &__card {
+    border-radius: 2rem;
+    background-color: #6430bd;
+    padding: 2rem;
+    width: 22.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 3rem;
+    margin: 1rem;
+  }
+
+  &__subheader {
+    font-size: 1.5rem;
+    color: #8ed2ff;
+  }
+
+  &__content {
+    color: #d7d3e8;
+    font-size: 1rem;
+  }
+}
