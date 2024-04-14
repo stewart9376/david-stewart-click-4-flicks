@@ -17,7 +17,7 @@ export default function TrendingMovies({ trendingMovies }) {
   };
 
   return (
-    <section className="trending-movies">
+    <div className="trending-movies">
       <h1 className="trending-movies__header">Trending Movies</h1>
       <Slider {...settings} className="trending-movies__wrapper">
         {trendingMovies &&
@@ -35,6 +35,6 @@ export default function TrendingMovies({ trendingMovies }) {
             </div>
           ))}
       </Slider>
-    </section>
+    </div>
   );
 }

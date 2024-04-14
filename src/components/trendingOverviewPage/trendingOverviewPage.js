@@ -34,7 +34,7 @@ export default function TrendingOverviewPage() {
     (eachTrendingmovie.vote_average * 10).toFixed(0) + "%";
 
   return (
-    <section className="overview-page">
+    <div className="overview-page">
       <div className="overview-page__wrapper">
         <div className="overview-page__container">
           <img
@@ -64,6 +64,6 @@ export default function TrendingOverviewPage() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -33,17 +33,18 @@ export default function ShowtimesPage() {
     for (let i = 0; i < showtimes.length; i++) {
       if (showtimes[i].city === selectedOption.value) {
         cityShowtimes.push(showtimes[i]);
-      } else {
-        console.log("this isnt working");
       }
     }
 
+    if (cityShowtimes.length === 0) {
+      console.error("No showtimes found for the selected city");
+    }
+
     setCityShowTimes(cityShowtimes);
-  }, [showtimes]);
+  }, [showtimes, selectedOption]);
 
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption);
-    console.log(selectedOption);
     fetchShowtimes();
   };
 

@@ -31,6 +31,7 @@ export default function HomePage() {
 
   return (
     <section>
+      <h1 className="features">Features</h1>
       <TrendingMovies trendingMovies={trendingMovies} />
       <TrendingOverviewPage trendingMovies={trendingMovies} />
     </section>
