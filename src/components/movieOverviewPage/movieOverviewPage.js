@@ -30,7 +30,7 @@ export default function MovieOverviewPage() {
     return <p>Loading...</p>;
   }
 
-  const ratingPercentage = movie.vote_average * 10;
+  const ratingPercentage = (movie.vote_average * 10).toFixed(0) + "%";
 
   return (
     <section className="overview-page">
@@ -75,12 +75,10 @@ export default function MovieOverviewPage() {
           <p className="overview-page__overview">{movie.overview}</p>
           <div className="overview-page__rating-container">
             <img className="overview-page__popcorn" src={popcornIcon} alt="" />
-            <p className="overview-page__rating">{movie.vote_average}</p>
+            <p className="overview-page__rating">
+              User Rating: {ratingPercentage}
+            </p>
           </div>
-          <div
-            className="overview-page__ratingBar"
-            style={{ width: `${ratingPercentage}%` }}
-          ></div>
         </div>
       </div>
     </section>

@@ -30,7 +30,8 @@ export default function TrendingOverviewPage() {
     return;
   }
 
-  const ratingPercentage = eachTrendingmovie.vote_average * 10;
+  const ratingPercentage =
+    (eachTrendingmovie.vote_average * 10).toFixed(0) + "%";
 
   return (
     <section className="overview-page">
@@ -41,8 +42,8 @@ export default function TrendingOverviewPage() {
             className="overview-page__img"
             alt="movie-poster"
           />
+          <p className="overview-page__info">Available to watch on:</p>
           <div className="overview-page__icons">
-            <p className="overview-page__info">Available to watch on:</p>
             <img className="overview-page__icon" src={netflixIcon} alt="" />
             <img className="overview-page__icon" src={amazonIcon} alt="" />
           </div>
@@ -58,13 +59,9 @@ export default function TrendingOverviewPage() {
           <div className="overview-page__rating-container">
             <img className="overview-page__popcorn" src={popcornIcon} alt="" />
             <p className="overview-page__rating">
-              {eachTrendingmovie.vote_average}
+              User Rating: {ratingPercentage}
             </p>
           </div>
-          <div
-            className="overview-page__ratingBar"
-            style={{ width: `${ratingPercentage}%` }}
-          ></div>
         </div>
       </div>
     </section>

@@ -57,6 +57,7 @@
 
   &__info {
     font-size: 1.2rem;
+    color: $color-text-primary;
   }
 
   &__rating-container {
@@ -68,12 +69,5 @@
 
   &__popcorn {
     width: 3rem;
-  }
-
-  &__ratingbar {
-    height: 20px;
-    background-color: #ddd;
-
-    @include percentage($ratingPercentage);
   }
 }
