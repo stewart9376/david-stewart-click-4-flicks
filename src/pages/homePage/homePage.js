@@ -37,7 +37,11 @@ export default function HomePage() {
       <h1 className="features">Features</h1>
       <div className="features__container">
         <div className="features__card">
-          <img className="features__icon" src={recommendation}></img>
+          <img
+            className="features__icon"
+            src={recommendation}
+            alt="recommendation icon"
+          ></img>
           <h3 className="features__subheader">Recommendations</h3>
           <p className="features__content">
             Questionnaire with three questions to filter down and randomly pick
@@ -45,7 +49,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="features__card">
-          <img className="features__icon" src={movie}></img>
+          <img className="features__icon" src={movie} alt="movie icon"></img>
           <h3 className="features__subheader">Movies</h3>
           <p className="features__content">
             A list of the top rated movies, along with an overview page
@@ -53,7 +57,11 @@ export default function HomePage() {
           </p>
         </div>
         <div className="features__card">
-          <img className="features__icon" src={filmReel}></img>
+          <img
+            className="features__icon"
+            src={filmReel}
+            alt="showtimes icon"
+          ></img>
           <h3 className="features__subheader">Cinema Showtimes</h3>
           <p className="features__content">
             A dropdown of cities in the UK showing the latest films out now and

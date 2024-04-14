@@ -1,9 +1,8 @@
-@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
 .features {
   font-size: 3rem;
-  color: #8ed2ff;
+  color: $color-text-primary;
   padding: 2rem 6.5rem 4rem;
   margin: 0;
 
@@ -15,7 +14,7 @@
 
   &__card {
     border-radius: 2rem;
-    background-color: #6430bd;
+    background-color: $color-background-secondary;
     padding: 2rem;
     width: 22.5rem;
     display: flex;
@@ -30,11 +29,11 @@
 
   &__subheader {
     font-size: 1.5rem;
-    color: #8ed2ff;
+    color: $color-text-primary;
   }
 
   &__content {
-    color: #d7d3e8;
+    color: $color-text-secondary;
     font-size: 1rem;
   }
 }
