@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import netflixIcon from "../../assets/icons/netflix.png";
 import amazonIcon from "../../assets/icons/amazon-prime-video.png";
-import popcornIcon from "../../assets/icons/popcorn.png";
+import ratingIcon from "../../assets/icons/rate.png";
 
 export default function MovieOverviewPage() {
   const { id } = useParams();
@@ -74,7 +74,7 @@ export default function MovieOverviewPage() {
           </p>
           <p className="overview-page__overview">{movie.overview}</p>
           <div className="overview-page__rating-container">
-            <img className="overview-page__popcorn" src={popcornIcon} alt="" />
+            <img className="overview-page__popcorn" src={ratingIcon} alt="" />
             <p className="overview-page__rating">
               User Rating: {ratingPercentage}
             </p>
