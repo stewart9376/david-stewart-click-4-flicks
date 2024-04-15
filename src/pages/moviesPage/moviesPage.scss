@@ -8,9 +8,14 @@
   &__search {
     padding: 1rem;
     border-radius: 2rem;
-    width: 24%;
-    background-color: #6430bd;
+    width: 17.5rem;
+    background-color: $color-background-secondary;
     border: 1px;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: $color-text-secondary;
+    }
   }
 }
 
