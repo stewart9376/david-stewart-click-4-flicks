@@ -6,6 +6,8 @@ import MovieOverviewPage from "../../components/movieOverviewPage/movieOverviewP
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   const fetchMovies = async (pageNumber) => {
@@ -24,10 +26,20 @@ export default function MoviesPage() {
     const fetchMoviesData = async () => {
       const firstPageMovies = await fetchMovies(1);
       setMovies(firstPageMovies.slice(0, 16));
+      setFilteredMovies(firstPageMovies.slice(0, 16));
     };
 
     fetchMoviesData();
   }, []);
+
+  useEffect(() => {
+    if (movies) {
+      const filtered = movies.filter((movie) =>
+        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredMovies(filtered);
+    }
+  }, [searchTerm, movies]);
 
   const handleLoadMore = async () => {
     const nextPageMovies = await fetchMovies(currentPage + 1);
@@ -35,9 +47,23 @@ export default function MoviesPage() {
     setCurrentPage(currentPage + 1);
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <section>
-      <MovieContent movies={movies} />
+      <div className="searchbar">
+        <input
+          className="searchbar__search"
+          name="search"
+          type="text"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+      </div>
+      <MovieContent movies={filteredMovies} />
       <div className="load">
         <button className="load__button" onClick={handleLoadMore}>
           Load More

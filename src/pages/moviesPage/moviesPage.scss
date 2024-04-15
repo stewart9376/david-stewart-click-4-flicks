@@ -1,5 +1,18 @@
 @use "../../styles/partials/variables" as *;
 
+.searchbar {
+  display: flex;
+  justify-content: center;
+
+  &__search {
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 86%;
+    background-color: #6430bd;
+    border: 1px;
+  }
+}
+
 .load {
   padding: 1rem 2rem;
   display: flex;
