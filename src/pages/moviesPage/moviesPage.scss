@@ -2,12 +2,13 @@
 
 .searchbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin: 0 5rem 0 0;
 
   &__search {
     padding: 1rem;
     border-radius: 2rem;
-    width: 86%;
+    width: 24%;
     background-color: #6430bd;
     border: 1px;
   }
