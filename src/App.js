@@ -9,12 +9,14 @@ import RecommendationsPage from "./pages/recommendationsPage/recommendationsPage
 import PopcornLoader from "./components/popcornLoader/popcornLoader.js";
 import AnswerPage from "./pages/answerPage/answerPage.js";
 import ShowtimesPage from "./pages/showtimesPage/showtimesPage.js";
+import Signup from "./pages/signup/signup.js";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/:id" element={<TrendingOverviewPage />}></Route>
         <Route>

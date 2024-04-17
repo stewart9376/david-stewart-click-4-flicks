@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem 0;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: $color-text-primary;
+    font-size: 3rem;
+  }
+
+  &__details {
+    color: $color-text-secondary;
+    font-size: 1.5rem;
+  }
+
+  &__input {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  &__button {
+    margin: 2rem 0;
+    background-color: $color-background-secondary;
+    border: $color-background-secondary;
+    color: $color-text-primary;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
