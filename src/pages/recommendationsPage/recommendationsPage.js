@@ -80,7 +80,7 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Action"
+                value="Drama"
                 name="Genre"
               />{" "}
               Happy
@@ -94,7 +94,7 @@ export default function RecommendationsPage() {
               <input
                 className="recommendations__answer"
                 type="radio"
-                value="Drama"
+                value="Action"
                 name="Genre"
               />{" "}
               Stressed

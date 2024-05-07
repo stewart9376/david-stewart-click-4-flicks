@@ -14,7 +14,6 @@ export default function Signup() {
         username: event.target.username.value,
         email: event.target.email.value,
         password: event.target.password.value,
-        role: "user",
       });
       navigate("/login");
     } catch (error) {
@@ -51,7 +50,7 @@ export default function Signup() {
         <button className="signup__button">Sign up</button>
         <p>{error}</p>
       </form>
-      <p>
+      <p className="signup__login">
         Have an account? <Link to="/login">Log in</Link>
       </p>
     </main>

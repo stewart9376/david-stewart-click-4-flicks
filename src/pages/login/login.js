@@ -14,16 +14,16 @@ export default function Login() {
       const response = await axios.post(
         "http://localhost:5050/api/users/login",
         {
-          email: event.target.email.value,
+          username: event.target.username.value,
           password: event.target.password.value,
         }
       );
-
+      console.log(response);
       localStorage.setItem("token", response.data.token);
 
       navigate("/");
     } catch (error) {
-      setError(error.response.data);
+      setError(error.response.data.error);
     }
   };
   return (

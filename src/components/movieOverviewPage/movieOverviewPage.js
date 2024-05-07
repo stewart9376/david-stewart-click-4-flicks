@@ -27,7 +27,7 @@ export default function MovieOverviewPage() {
   }, [id]);
 
   if (!movie) {
-    return <p>Loading...</p>;
+    return;
   }
 
   const ratingPercentage = (movie.vote_average * 10).toFixed(0) + "%";
