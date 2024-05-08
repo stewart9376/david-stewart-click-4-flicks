@@ -12,10 +12,14 @@
     justify-content: space-evenly;
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__card {
     border-radius: 2rem;
     background-color: $color-background-secondary;
-    padding: 2rem;
+    padding: 2rem 3rem;
     width: 22.5rem;
     display: flex;
     flex-direction: column;
