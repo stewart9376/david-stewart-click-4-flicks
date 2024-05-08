@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Header from "../src/components/header/header.js";
 import MoviesPage from "./pages/moviesPage/moviesPage.js";
 import MovieOverviewPage from "./components/movieOverviewPage/movieOverviewPage.js";
 import HomePage from "./pages/homePage/homePage.js";
@@ -15,11 +14,10 @@ import Login from "./pages/login/login.js";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/homepage" element={<HomePage />}></Route>
         <Route path="/:id" element={<TrendingOverviewPage />}></Route>
         <Route>
           <Route path="/recommendations" element={<RecommendationsPage />} />

@@ -3,6 +3,7 @@ import "./showtimesPage.scss";
 import axios from "axios";
 import Select from "react-select";
 import Showtimes from "../../components/showtimes/showtimes";
+import Header from "../../components/header/header";
 
 export default function ShowtimesPage() {
   const [showtimes, setShowtimes] = useState(null);
@@ -59,27 +60,30 @@ export default function ShowtimesPage() {
   ];
 
   return (
-    <section className="showtimes">
-      <h1 className="showtimes__header">Showtimes</h1>
-      <Select
-        className="showtimes__dropdown"
-        value={selectedOption}
-        onChange={handleChange}
-        options={options}
-        placeholder="Select a city..."
-      />
+    <main>
+      <Header />
+      <section className="showtimes">
+        <h1 className="showtimes__header">Showtimes</h1>
+        <Select
+          className="showtimes__dropdown"
+          value={selectedOption}
+          onChange={handleChange}
+          options={options}
+          placeholder="Select a city..."
+        />
 
-      <div className="showtimes__wrapper">
-        {cityShowTimes &&
-          cityShowTimes.map((showtime) => (
-            <Showtimes
-              key={showtime.id}
-              city={showtime.city}
-              title={showtime.title}
-              showtimes={showtime.showtimes}
-            />
-          ))}
-      </div>
-    </section>
+        <div className="showtimes__wrapper">
+          {cityShowTimes &&
+            cityShowTimes.map((showtime) => (
+              <Showtimes
+                key={showtime.id}
+                city={showtime.city}
+                title={showtime.title}
+                showtimes={showtime.showtimes}
+              />
+            ))}
+        </div>
+      </section>
+    </main>
   );
 }

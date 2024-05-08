@@ -21,7 +21,7 @@ export default function Login() {
       console.log(response);
       localStorage.setItem("token", response.data.token);
 
-      navigate("/");
+      navigate("/homepage");
     } catch (error) {
       setError(error.response.data.error);
     }
@@ -48,7 +48,7 @@ export default function Login() {
         {error && <div className="login__message">{error}</div>}
       </form>
       <p className="login__signup">
-        Need an account? <Link to="/signup">Sign up</Link>
+        Need an account? <Link to="/">Sign up</Link>
       </p>
     </main>
   );

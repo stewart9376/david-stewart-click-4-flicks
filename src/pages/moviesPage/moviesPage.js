@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieContent from "../../components/moviesContent/moviesContent";
 import MovieOverviewPage from "../../components/movieOverviewPage/movieOverviewPage";
+import Header from "../../components/header/header";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
@@ -53,6 +54,7 @@ export default function MoviesPage() {
 
   return (
     <section>
+      <Header />
       <div className="searchbar">
         <input
           className="searchbar__search"

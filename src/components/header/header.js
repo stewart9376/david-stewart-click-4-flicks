@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <Link className="header__link" to="/">
+        <Link className="header__link" to="/homepage">
           <p className="header__logo">Click 4 Flicks</p>
         </Link>
         <nav className="header__navbar">
